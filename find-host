@@ -1,0 +1,72 @@
+#!/bin/bash
+
+clear
+
+RED=$(tput setaf 1 && tput bold)
+GREEN=$(tput setaf 2 && tput bold)
+STAND=$(tput sgr0)
+BLUE=$(tput setaf 6 && tput bold)
+
+echo""
+echo""
+echo""
+
+echo
+echo
+echo
+echo
+echo
+echo $RED"#====================================================================================#"
+echo
+echo "find all live hosts in your Network:)"                                          
+echo "	 									"
+echo "   	                  ..:::::::::..		"
+echo "   	               ..:::aad8888888baa:::..	"
+echo "   	           .::::d:?88888888888?::8b::::.	"
+echo "   	         .:::d8888:?88888888??a888888b:::.	"
+echo "   	       .:::d8888888a8888888aa8888888888b:::.	"
+echo "   	      ::::dP::::::::88888888888::::::::Yb::::	"
+echo "   	     ::::dP(joker11)Y888888888P:::::::::Yb::::	"
+echo "   	    ::::d8:::::::::::Y8888888P:::::::::::8b::::	"
+echo "   	   .::::88::::::::::::Y88888P::::::::::::88::::.	"
+echo "   	   :::::Y8baaaaaaaaaa88P:T:Y88aaaaaaaaaad8P:::::	"
+echo "   	   :::::::Y88888888888P::|::Y88888888888P:::::::	"
+echo "   	   ::::::::::::::::888:::|:::888::::::::::::::::	"
+echo "   	    :::::::::::::::8888888888888b::::::::::::::	"
+echo "   	    :::::::::::::::88888888888888::::::::::::::	"
+echo "   	     :::::::::::::d88888888888888::::::::::::: 	"
+echo "   	      ::::::::::::88::88::88:::88::::::::::::	"
+echo "   	        ::::::::::88::88::88:::88::::::::::	"
+echo "   	          ::::::::88::88::P::::88::::::::	"
+echo "   	            ::::::88::88:::::::88::::::	"
+echo "   	                :::::::::::::::::::	"
+echo "   	                     ::::::::: 	"
+echo $GREEN"==========================================# "
+echo $GREEN"Finding The Live hosts up on Network :)   # "
+echo $GREEN"usage: Enter the range for your class     # "
+echo $BLUE "<---by Oseid Aldary--->                  # "
+echo $GREEN"simple tool                               # "
+echo $GREEN"v1.0                                      # "
+echo "#===================================================================================#"
+echo ""
+echo Usage:
+echo Enter your range 
+echo "example: 192.168.1 "
+echo "#--------------------#"  
+echo
+read class
+echo
+echo "#-----------------------------------#"
+echo $RED"finding the hosts for you..... :)"
+sleep 6
+echo 
+echo "[*]Found"
+echo
+for x in `seq 1 254`;do
+ping -c 1 $class.$x | grep "bytes from" | cut -d " " -f4 | cut -d ":" -f1 &
+done
+echo "#-----------------------------------#"
+echo "thanks for using...Good Day :) "
+sleep 2
+echo
+read -p "Please Press Enter to exit script"
